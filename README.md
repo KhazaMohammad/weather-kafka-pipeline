@@ -4,8 +4,8 @@ This project demonstrates how to fetch the data in real-time from weather API us
 It fetches current weather information from WeatherAPI and produces the data to a Kafka topic, making it available for downstream consumers to process.  
 
 #NOTE:
-Kafka and Zookeeper services are invoked from localhost
-Python code triggered from Docker
+Kafka and Zookeeper services are invoked from localhost  
+Python code triggered from Docker  
   
 **Features:**  
 > Fetch live weather data for any city using WeatherAPI.
