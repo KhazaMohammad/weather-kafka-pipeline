@@ -1,0 +1,1 @@
+%KAFKA_HOME%\bin\windows\kafka-console-consumer.bat --topic code_check_01 --bootstrap-server localhost:9092 --from-beginning
