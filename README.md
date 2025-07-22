@@ -5,7 +5,7 @@ It fetches current weather information from WeatherAPI and produces the data to 
 
 
   
-**Features:  **
+**Features:**  
 > Fetch live weather data for any city using WeatherAPI.
 > Produce weather data to Apache Kafka topic.
 > Simple Kafka Consumer to read weather updates.
@@ -14,7 +14,8 @@ It fetches current weather information from WeatherAPI and produces the data to 
 
   
 
-****Project Structure: **   **
+**Project Structure:**  
+
 weather-kafka-pipeline  
 |   README.md  
 |   requirements.txt  
