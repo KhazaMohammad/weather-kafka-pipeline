@@ -1,6 +1,4 @@
-#################################################################################################  
-############################**Weather Kafka Pipeline**###########################################  
-#################################################################################################   
+#############**Weather Kafka Pipeline**###############  
 
 This project demonstrates how to fetch the data in real-time from weather API using Kafka.  
 It fetches current weather information from WeatherAPI and produces the data to a Kafka topic, making it available for downstream consumers to process.  
