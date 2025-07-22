@@ -1,23 +1,3 @@
-# weather-kafka-pipeline
-
-**Project Structure**
-D:.
-|   README.md
-|   requirements.txt
-|
-+---kafka_environment
-|       kafka-console-consumer.cmd
-|       kafka-server-start.cmd
-|       kafka-topics-create.cmd
-|       zookeeper-start.cmd
-|
-\---src
-        api_extract.py
-        data_consumer.py
-        data_producer.py
-        settings.py
-
-
 **Weather Kafka Pipeline**:
 This project demonstrates how to fetch the data in real-time from weather API using Kafka.
 It fetches current weather information from WeatherAPI and produces the data to a Kafka topic, making it available for downstream consumers to process.
