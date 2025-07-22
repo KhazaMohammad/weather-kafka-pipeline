@@ -2,6 +2,7 @@ from kafka import KafkaProducer
 from settings import Settings
 import json
 from api_extract import fetch_city_weather
+import time
 
 
 # Object creation
@@ -23,4 +24,5 @@ producer.send(topic=kafka_settings_obj.topic,
               key = data["location"]["name"].encode("utf-8"),
               value=data
               )
+time.sleep(60)
 producer.flush()
