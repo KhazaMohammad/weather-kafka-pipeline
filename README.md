@@ -31,3 +31,6 @@ weather-kafka-pipeline/
 ------├── kafka-server-start.cmd    
 ------├── kafka-topics-create.cmd    
 ------├── zookeeper-start.cmd  
+
+
+docker build -t weather-kafka-app .
