@@ -16,18 +16,18 @@ It fetches current weather information from WeatherAPI and produces the data to 
 
 **Project Structure:**  
 
-weather-kafka-pipeline  /  
+weather-kafka-pipeline/  
 ├── README.md  
 ├── docker-compose.yml  
 ├── Dockerfile  
 ├── requirements.txt  
 └── src/  
-    ├── data_producer.py  
-    ├── data_consumer.py  
-    ├── settings.py  
-    └── api_extract.py  
-└── kafka_environment    
-    ├── kafka-console-consumer.cmd    
-    ├── kafka-server-start.cmd    
-    ├── kafka-topics-create.cmd    
-    ├── zookeeper-start.cmd  
+------├── data_producer.py  
+------├── data_consumer.py  
+------├── settings.py  
+------├── api_extract.py  
+└── kafka_environment/    
+------├── kafka-console-consumer.cmd    
+------├── kafka-server-start.cmd    
+------├── kafka-topics-create.cmd    
+------├── zookeeper-start.cmd  
