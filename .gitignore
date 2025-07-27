@@ -1,0 +1,50 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.env/
+
+# Environment variables
+.env
+
+# VSCode and IDEs
+.vscode/
+.idea/
+
+# macOS and system files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test output
+htmlcov/
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+.cache
+.pytest_cache/
+
+# Kafka logs (if generated locally)
+kafka-logs/
+
+# PyInstaller
+dist/
+build/
+*.spec
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Azure related
+*.azure*
+
+# Data dumps or output files
+*.json
+output/
