@@ -19,7 +19,8 @@ consumer = KafkaConsumer(
     key_deserializer=lambda k: k.decode("utf-8") if k else None,
     auto_offset_reset='earliest',
     enable_auto_commit=True,
-    group_id="consumer-grp"
+    group_id="consumer-grp",
+    consumer_timeout_ms=10000
 )
 load_dotenv()
 
