@@ -8,7 +8,6 @@ import time
 # Object creation
 kafka_settings_obj = Settings()
 
-
 # Producer Creation
 producer = KafkaProducer(bootstrap_servers=kafka_settings_obj.kafka_bootstrap_servers,
                          security_protocol=kafka_settings_obj.kafka_security_protocol,
