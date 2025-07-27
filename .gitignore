@@ -50,3 +50,4 @@ build/
 output/
 .env
 src/.env
+src/.env
