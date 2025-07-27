@@ -29,6 +29,7 @@ account_key = os.getenv("ADLS_ACCOUNT_KEY")
 file_system_name = "mypipelinecontainer-dev"
 directory_name = "weather_jsons"
 
+
 # Setup ADLS Client
 service_client = DataLakeServiceClient(
     account_url=f"https://{account_name}.dfs.core.windows.net",
