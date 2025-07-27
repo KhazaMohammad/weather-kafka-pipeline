@@ -44,24 +44,6 @@ try:
 except Exception as e:
     print(f"Directory already exists or error: {e}")
 
-    kafka_settings_obj.topic,
-    bootstrap_servers=kafka_settings_obj.kafka_bootstrap_servers,
-    security_protocol=kafka_settings_obj.kafka_security_protocol,
-    value_deserializer=lambda m: json.loads(m.decode("utf-8")),
-    key_deserializer=lambda k: k.decode("utf-8") if k else None,
-    auto_offset_reset='earliest',
-    enable_auto_commit=True,
-    group_id="consumer-grp"
-)
-
-load_dotenv()
-
-# Azure ADLS config
-account_name = "mypipeline01"
-account_key = os.getenv("ADLS_ACCOUNT_KEY")
-file_system_name = "mypipelinecontainer-dev"
-directory_name = "weather_jsons"
-
 # Setup ADLS Client
 service_client = DataLakeServiceClient(
 account_url=f"https://{account_name}.dfs.core.windows.net",
