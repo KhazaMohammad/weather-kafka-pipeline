@@ -21,7 +21,6 @@ consumer = KafkaConsumer(
     enable_auto_commit=True,
     group_id="consumer-grp"
 )
-
 load_dotenv()
 
 # Azure ADLS config

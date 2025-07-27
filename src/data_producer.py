@@ -14,7 +14,6 @@ producer = KafkaProducer(bootstrap_servers=kafka_settings_obj.kafka_bootstrap_se
                          value_serializer=lambda v: json.dumps(v).encode("utf-8"),
                          retries=3)
 
-
 cities = ["Mumbai", "Delhi", "Chennai", "Kolkata", "Bangalore"]
 for city in cities:
     try:
