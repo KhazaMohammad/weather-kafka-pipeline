@@ -2,4 +2,4 @@ kafka-python
 python-dotenv
 requests
 azure-storage-file-datalake
-pip install azure-storage-blob
+azure-storage-blob
