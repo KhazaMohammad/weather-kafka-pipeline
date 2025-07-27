@@ -24,4 +24,4 @@ COPY .env .env
 # ENV VAR_NAME=value
 
 # Default command
-CMD ["python", "src/main.py"]
+CMD ["sh", "-c", "python src/data_producer.py && python src/data_consumer.py"]
