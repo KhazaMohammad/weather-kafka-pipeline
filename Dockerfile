@@ -24,4 +24,4 @@ COPY src/ ./src/
 # ENV VAR_NAME=value
 
 # Default command
-CMD ["sh", "-c", "python src/data_producer.py && python src/data_consumer.py"]
+CMD ["sh", "-c", "sleep 60 && python src/data_producer.py && python src/data_consumer.py"]

@@ -1,6 +1,11 @@
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.providers.docker.operators.docker import DockerOperator
+from airflow.models import Variable
+from dotenv import load_dotenv
+# Add the Airflow variables before run
+
+load_dotenv(dotenv_path='/opt/airflow/.env')
 
 default_args = {
     'owner': 'airflow',
@@ -25,7 +30,14 @@ with DAG(
         api_version='auto',
         auto_remove=True,
         command='python3 src/data_producer.py',
-        docker_url='tcp://host.docker.internal:2375',
+        environment={
+            'AZURE_CLIENT_ID': Variable.get('AZURE_CLIENT_ID'),
+            'AZURE_TENANT_ID': Variable.get('AZURE_TENANT_ID'),
+            'AZURE_CLIENT_SECRET': Variable.get('AZURE_CLIENT_SECRET'),
+            'KAFKA_BOOTSTRAP_SERVERS': Variable.get('KAFKA_BOOTSTRAP_SERVERS', 'kafka:9092')
+        },
+        docker_url="unix://var/run/docker.sock",
+        mount_tmp_dir=False,
         network_mode='weather-kafka-pipeline_default',
     )
 
@@ -35,7 +47,14 @@ with DAG(
         api_version='auto',
         auto_remove=True,
         command='python3 src/data_consumer.py',
-        docker_url='tcp://host.docker.internal:2375',
+        environment={
+            'AZURE_CLIENT_ID': Variable.get('AZURE_CLIENT_ID'),
+            'AZURE_TENANT_ID': Variable.get('AZURE_TENANT_ID'),
+            'AZURE_CLIENT_SECRET': Variable.get('AZURE_CLIENT_SECRET'),
+            'KAFKA_BOOTSTRAP_SERVERS': Variable.get('KAFKA_BOOTSTRAP_SERVERS', 'kafka:9092')
+        },
+        docker_url="unix://var/run/docker.sock",
+        mount_tmp_dir=False,
         network_mode='weather-kafka-pipeline_default',
     )
 
