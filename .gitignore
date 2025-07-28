@@ -48,3 +48,4 @@ build/
 # Data dumps or output files
 *.json
 output/
+*.iml
