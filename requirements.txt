@@ -5,3 +5,5 @@ azure-storage-file-datalake
 azure-storage-blob
 azure-identity
 azure-keyvault-secrets
+azure-core
+dotenv

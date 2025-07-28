@@ -4,16 +4,17 @@ import json
 from azure.storage.filedatalake import DataLakeServiceClient
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
+from azure.core.credentials import TokenCredential
 from datetime import datetime
-import os
 from dotenv import load_dotenv
+
 
 # Load environment variables (optional)
 load_dotenv()
 
 # Azure Key Vault: retrieve secret
 key_vault_url = "https://pipeline01secrets.vault.azure.net"
-credential = DefaultAzureCredential()
+credential: TokenCredential = DefaultAzureCredential()
 secret_client = SecretClient(vault_url=key_vault_url, credential=credential)
 account_key = secret_client.get_secret("ADLS-ACCOUNT-KEY").value
 client_id = secret_client.get_secret("AZURE-CLIENT-ID").value
