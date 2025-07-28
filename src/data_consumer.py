@@ -16,6 +16,9 @@ key_vault_url = "https://pipeline01secrets.vault.azure.net"
 credential = DefaultAzureCredential()
 secret_client = SecretClient(vault_url=key_vault_url, credential=credential)
 account_key = secret_client.get_secret("ADLS-ACCOUNT-KEY").value
+client_id = secret_client.get_secret("AZURE-CLIENT-ID").value
+tenant_id = secret_client.get_secret("AZURE-TENANT-ID").value
+client_secret = secret_client.get_secret("AZURE-CLIENT-SECRET").value
 
 # ADLS Config
 account_name = "mypipeline01"
