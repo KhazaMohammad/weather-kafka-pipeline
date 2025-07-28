@@ -49,5 +49,3 @@ build/
 *.json
 output/
 .env
-src/.env
-src/.env
