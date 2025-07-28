@@ -21,20 +21,33 @@ Python code triggered from Docker
 **Project Structure:**  
 
 weather-kafka-pipeline/  
+.  
 ├── README.md  
-├── docker-compose.yml  
 ├── Dockerfile  
+├── Kafka_check_01.iml  
+├── dags  
+│   └── weather_pipeline_dag.py  
+├── docker-compose.yml  
+├── kafka_environment  
+│   ├── kafka-console-consumer.cmd  
+│   ├── kafka-server-start.cmd  
+│   ├── kafka-topics-create.cmd  
+│   └── zookeeper-start.cmd  
 ├── requirements.txt  
-└── src/  
-------├── data_producer.py  
-------├── data_consumer.py  
-------├── settings.py  
-------├── api_extract.py  
-└── kafka_environment/    
-------├── kafka-console-consumer.cmd    
-------├── kafka-server-start.cmd    
-------├── kafka-topics-create.cmd    
-------├── zookeeper-start.cmd  
+├── src  
+│   ├── __pycache__  
+│   ├── api_extract.py  
+│   ├── data_consumer.py  
+│   ├── data_producer.py  
+│   ├── settings.py  
+│   └── venv  
+└── venv  
+    ├── bin  
+    ├── include  
+    ├── lib  
+    ├── lib64 -> lib  
+    └── pyvenv.cfg  
+    
 
 
 docker build -t weather-kafka-app .
