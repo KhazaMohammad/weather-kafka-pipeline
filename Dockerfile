@@ -18,7 +18,7 @@ COPY src/ ./src/
 
 # Copy .env file if needed
 # (optional: not recommended for prod unless secrets are injected at runtime)
-COPY .env .env
+#COPY .env .env
 
 # Set environment variables from .env (optional)
 # ENV VAR_NAME=value
