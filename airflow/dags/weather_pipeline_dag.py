@@ -18,7 +18,8 @@ with DAG(
         dag_id='weather_kafka_pipeline',
         default_args=default_args,
         description='Run weather data producer and consumer using Kafka',
-        schedule_interval=None,  # Trigger manually or use e.g., '*/30 * * * *' for every 30 mins
+        #schedule_interval=None, 
+        schedule_interval='*/5 * * * *',
         start_date=datetime(2025, 7, 21),
         dagrun_timeout=timedelta(seconds=5000),
         catchup=False,
