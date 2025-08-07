@@ -26,7 +26,7 @@ with DAG(
 
     run_producer = DockerOperator(
         task_id='run_producer',
-        image='weather-kafka-app:latest',  # This should match the image used in your docker-compose
+        image='weather-kafka-pipeline_weather-app:latest',  # This should match the image used in your docker-compose
         api_version='auto',
         auto_remove=True,
         command='python3 src/data_producer.py',
@@ -43,7 +43,7 @@ with DAG(
 
     run_consumer = DockerOperator(
         task_id='run_consumer',
-        image='weather-kafka-app:latest',
+        image='weather-kafka-pipeline_weather-app:latest',
         api_version='auto',
         auto_remove=True,
         command='python3 src/data_consumer.py',
