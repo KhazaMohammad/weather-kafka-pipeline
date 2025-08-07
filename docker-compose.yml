@@ -49,6 +49,7 @@ services:
 
 
   airflow-webserver:
+    user: root
     image: apache/airflow:2.8.1
     restart: always
     depends_on:
@@ -58,6 +59,8 @@ services:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
       AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__WEBSERVER__SECRET_KEY: "my-airflow-super-secret-key"
+      DOCKER_HOST: unix:///var/run/docker.sock
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/logs:/opt/airflow/logs
@@ -70,6 +73,7 @@ services:
 
 
   airflow-scheduler:
+    user: root
     image: apache/airflow:2.8.1
     restart: always
     depends_on:
@@ -77,6 +81,8 @@ services:
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__WEBSERVER__SECRET_KEY: "my-airflow-super-secret-key"
+      DOCKER_HOST: unix:///var/run/docker.sock
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/logs:/opt/airflow/logs
