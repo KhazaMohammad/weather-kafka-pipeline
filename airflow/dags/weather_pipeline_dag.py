@@ -19,7 +19,7 @@ with DAG(
         default_args=default_args,
         description='Run weather data producer and consumer using Kafka',
         #schedule_interval=None, 
-        schedule_interval='*/5 * * * *',
+        schedule_interval='0 * * * *',
         start_date=datetime(2025, 7, 21),
         dagrun_timeout=timedelta(seconds=5000),
         catchup=False,
