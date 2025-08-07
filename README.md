@@ -3,11 +3,20 @@
 This project demonstrates how to fetch the data in real-time from weather API using Kafka.  
 It fetches current weather information from WeatherAPI and produces the data to a Kafka topic, making it available for downstream consumers to process.  
 Complete pipeline is orchestrated through Apache Airflow  
+
+Sample Dashboard for the real-time data as below:  
+<img width="1796" height="389" alt="image" src="https://github.com/user-attachments/assets/d23a7f5f-cab0-41ce-9a43-7cc3e5c8f27e" />  
   
 
-#NOTE:
-Kafka and Zookeeper services are invoked from localhost  
-Python code triggered from Docker  
+**Tools / Services: ** 
+Python  
+Apache Kafka  
+Apache Airflow  
+Azure Databricks  
+ADLS Gen2  
+Spark Structured Streaming  
+Azure KeyVault  
+Docker  
   
 **Features:**  
 > Fetch live weather data for any city using WeatherAPI.
